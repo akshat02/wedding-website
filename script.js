@@ -1,42 +1,32 @@
-const content = {
-    en: {
-        title: "Our Wedding",
-        homeTitle: "Welcome to Our Wedding",
-        homeContent: "We are excited to share this special day with you!",
-        links: {
-            home: "Home",
-            things: "Things to do",
-            story: "Our Story",
-            travel: "Travel",
-            itinerary: "Itinerary"
-        }
-    },
-    hi: {
-        title: "हमारी शादी",
-        homeTitle: "हमारी शादी में आपका स्वागत है",
-        homeContent: "हम आपके साथ इस खास दिन को साझा करने के लिए उत्साहित हैं!",
-        links: {
-            home: "मुख पृष्ठ",
-            things: "करने योग्य चीजें",
-            story: "हमारी कहानी",
-            travel: "यात्रा",
-            itinerary: "कार्यक्रम"
-        }
-    }
-};
+// Set the date we're counting down to
+let countDownDate = new Date("Dec 31, 2024 00:00:00").getTime();
 
-function setLanguage(lang) {
-    document.getElementById('title').textContent = content[lang].title;
-    document.getElementById('home-title').textContent = content[lang].homeTitle;
-    document.getElementById('home-content').textContent = content[lang].homeContent;
-    document.getElementById('home-link').textContent = content[lang].links.home;
-    document.getElementById('things-link').textContent = content[lang].links.things;
-    document.getElementById('story-link').textContent = content[lang].links.story;
-    document.getElementById('travel-link').textContent = content[lang].links.travel;
-    document.getElementById('itinerary-link').textContent = content[lang].links.itinerary;
-}
+// Update the count down every 1 second
+let countdownFunction = setInterval(function() {
 
-// Set default language to English
-document.addEventListener('DOMContentLoaded', () => {
-    setLanguage('en');
-});
+  // Get today's date and time
+  let now = new Date().getTime();
+    
+  // Find the distance between now and the count down date
+  let distance = countDownDate - now;
+    
+  // Time calculations for days, hours, minutes and seconds
+  let months = Math.floor(distance / (1000 * 60 * 60 * 24 * 30));
+  let days = Math.floor((distance % (1000 * 60 * 60 * 24 * 30)) / (1000 * 60 * 60 * 24));
+  let hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+  let minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+  let seconds = Math.floor((distance % (1000 * 60)) / 1000);
+    
+  // Display the result in the element with id="demo"
+  document.getElementById("months").innerHTML = months;
+  document.getElementById("days").innerHTML = days;
+  document.getElementById("hours").innerHTML = hours;
+  document.getElementById("minutes").innerHTML = minutes;
+  document.getElementById("seconds").innerHTML = seconds;
+    
+  // If the count down is over, write some text 
+  if (distance < 0) {
+    clearInterval(countdownFunction);
+    document.querySelector(".countdown").innerHTML = "EXPIRED";
+  }
+}, 1000);
