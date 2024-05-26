@@ -3,36 +3,45 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>PujaKeAkshat</title>
+    <title>We're Getting Married!</title>
     <link rel="stylesheet" href="styles.css">
-    <script defer src="script.js"></script>
 </head>
 <body>
-    <header>
-        <h1 id="title">Our Wedding</h1>
-        <div class="language-switch">
-            <button onclick="setLanguage('en')">English</button>
-            <button onclick="setLanguage('hi')">हिन्दी</button>
+    <div class="hero">
+        <img src="hero-image.jpg" alt="Couple" class="hero-image">
+        <div class="overlay">
+            <h1>We're getting married!</h1>
+            <button class="rsvp-button">RSVP</button>
         </div>
-    </header>
-    <nav>
-        <ul>
-            <li><a href="#home" id="home-link">Home</a></li>
-            <li><a href="#things-to-do" id="things-link">Things to do</a></li>
-            <li><a href="#our-story" id="story-link">Our Story</a></li>
-            <li><a href="#travel" id="travel-link">Travel</a></li>
-            <li><a href="#itinerary" id="itinerary-link">Itinerary</a></li>
-        </ul>
-    </nav>
-    <main>
-        <section id="home">
-            <h2 id="home-title">Welcome to Our Wedding</h2>
-            <p id="home-content">We are excited to share this special day with you!</p>
-        </section>
-        <!-- Other sections would be similar -->
-    </main>
-    <footer>
-        <p>&copy; 2024 Our Wedding. All rights reserved.</p>
-    </footer>
+    </div>
+    
+    <div class="countdown">
+        <div><span id="months"></span> Months</div>
+        <div><span id="days"></span> Days</div>
+        <div><span id="hours"></span> Hours</div>
+        <div><span id="minutes"></span> Minutes</div>
+        <div><span id="seconds"></span> Seconds</div>
+    </div>
+    
+    <div class="story">
+        <h2>With love</h2>
+        <div class="story-item">
+            <h3>2016</h3>
+            <h4>How we met</h4>
+            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+        </div>
+        <div class="story-item">
+            <h3>2017</h3>
+            <h4>He proposed, I said Yes</h4>
+            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+        </div>
+        <div class="story-item">
+            <h3>2019</h3>
+            <h4>Our Wedding day</h4>
+            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+        </div>
+    </div>
+    
+    <script src="script.js"></script>
 </body>
 </html>
